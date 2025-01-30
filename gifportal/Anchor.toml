@@ -4,14 +4,14 @@
 resolution = true
 skip-lint = false
 
-[programs.localnet]
+[programs.testnet]
 gifportal = "GWXJMUTKETCdfGMYN7dgXAtu3831oaxLNz95u4risCfQ"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "Testnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
