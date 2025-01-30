@@ -1,3 +1,11 @@
 node_modules
 .DS_STORE
 build
+
+gifportal/.anchor
+gifportal/.DS_Store
+gifportal/target
+gifportal/**/*.rs.bk
+gifportal/node_modules
+gifportal/test-ledger
+gifportal/.yarn
