@@ -4,15 +4,15 @@
 resolution = true
 skip-lint = false
 
-[programs.testnet]
+[programs.devnet]
 gifportal = "GWXJMUTKETCdfGMYN7dgXAtu3831oaxLNz95u4risCfQ"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Testnet"
-wallet = "~/.config/solana/id.json"
+cluster = "https://api.devnet.solana.com"
+wallet = "/root/.config/solana/new-keypair.json"
 
 [scripts]
 test = "node tests/gifportal.js"

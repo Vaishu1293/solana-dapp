@@ -1,4 +1,5 @@
 const anchor = require('@project-serum/anchor');
+const { AnchorProvider, web3 } = anchor;
 const fs = require('fs');
 const path = require('path');
 
@@ -6,9 +7,8 @@ const main = async () => {
   console.log("Starting tests...");
 
   // Use the correct provider
-  // const provider = anchor.AnchorProvider.local();
-  // anchor.setProvider(provider);
-  anchor.setProvider(anchor.Provider.env());
+  const provider = AnchorProvider.env(); // Use env() for environment-based provider
+  anchor.setProvider(provider);
 
   console.log("Workspace Programs:", Object.keys(anchor.workspace));
 
@@ -21,8 +21,9 @@ const main = async () => {
 
   // Load the IDL manually
   const idl = require(idlPath);
-  const programId = new anchor.web3.PublicKey("GWXJMUTKETCdfGMYN7dgXAtu3831oaxLNz95u4risCfQ");
+  const programId = new web3.PublicKey("GWXJMUTKETCdfGMYN7dgXAtu3831oaxLNz95u4risCfQ");
 
+  // Create the program instance
   const program = new anchor.Program(idl, programId, provider);
   console.log("Manually Loaded Program ID:", program.programId.toString());
 
